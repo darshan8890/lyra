@@ -3196,12 +3196,18 @@ kbd {
 
 .founder-identity h2 {
   margin: 0;
-  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
-  line-height: 1.1;
-  background: linear-gradient(120deg, #f3e7d8 0%, var(--gold-bright) 55%, #f3e7d8 100%);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2.1rem, 3.4vw, 2.75rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  background: linear-gradient(120deg, #f3e7d8 0%, var(--gold-bright) 38%, #fff1df 52%, var(--gold) 72%, #f3e7d8 100%);
+  background-size: 220% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: accentFlow 7s ease-in-out infinite alternate;
 }
 
 .founder-title {
