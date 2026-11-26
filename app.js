@@ -261,6 +261,7 @@
       if (playing) canvasVideo.play().catch(() => {});
       else canvasVideo.pause();
     }
+    if (typeof syncMiniPlayerUI === "function") syncMiniPlayerUI(playing);
   }
 
   function updateProgressUI() {
@@ -352,6 +353,7 @@
     syncCanvasVideo(t);
     renderQueue();
     if (typeof syncCatalogPlayingState === "function") syncCatalogPlayingState();
+    if (typeof syncMiniPlayerMeta === "function") syncMiniPlayerMeta(t);
     updateProgressUI();
     setLyricShift(0);
     if (lyricsBox) fetchLyricsForTrack(t);
@@ -1125,8 +1127,118 @@
     if (postDownloadBar) postDownloadBar.hidden = true;
   });
 
+  // Live APK Download Counter (GitHub Releases)
+  const heroDownloadCountEl = document.getElementById("heroDownloadCount");
+  const hubDownloadCountEl = document.getElementById("hubDownloadCount");
+  let liveDownloadTotal = null;
+
+  function renderDownloadCounter(count) {
+    const label =
+      typeof count === "number" && count > 0
+        ? `${count.toLocaleString()} Downloads`
+        : "Just Released · v1.6.47";
+    if (heroDownloadCountEl) heroDownloadCountEl.textContent = label;
+    if (hubDownloadCountEl) {
+      hubDownloadCountEl.textContent =
+        typeof count === "number" && count > 0
+          ? `${count.toLocaleString()} direct downloads`
+          : "Live on GitHub Releases";
+    }
+  }
+
+  if (heroDownloadCountEl || hubDownloadCountEl) {
+    fetch("https://api.github.com/repos/darshan8890/lyra/releases")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((releases) => {
+        if (!Array.isArray(releases)) return;
+        let total = 0;
+        releases.forEach((rel) => {
+          (rel.assets || []).forEach((asset) => {
+            if (String(asset.name || "").toLowerCase().endsWith(".apk")) {
+              total += Number(asset.download_count) || 0;
+            }
+          });
+        });
+        liveDownloadTotal = total;
+        renderDownloadCounter(total);
+      })
+      .catch(() => {});
+  }
+
+  // Floating Persistent Mini-Player Bar
+  const floatingMiniPlayer = document.getElementById("floatingMiniPlayer");
+  const miniArt = document.getElementById("miniArt");
+  const miniTitle = document.getElementById("miniTitle");
+  const miniArtist = document.getElementById("miniArtist");
+  const miniEq = document.getElementById("miniEq");
+  const miniPrevBtn = document.getElementById("miniPrevBtn");
+  const miniPlayBtn = document.getElementById("miniPlayBtn");
+  const miniNextBtn = document.getElementById("miniNextBtn");
+  const miniJumpBtn = document.getElementById("miniJumpBtn");
+  const miniCloseBtn = document.getElementById("miniCloseBtn");
+  const previewSectionEl = document.getElementById("preview");
+  let hasStartedPlayback = false;
+  let previewInView = true;
+  let miniDismissed = false;
+
+  function updateMiniVisibility() {
+    if (!floatingMiniPlayer) return;
+    const show = hasStartedPlayback && !previewInView && !miniDismissed;
+    floatingMiniPlayer.hidden = !show;
+    document.body.classList.toggle("has-mini-player", show);
+  }
+
+  function syncMiniPlayerMeta(t) {
+    if (!t) return;
+    if (miniArt) {
+      miniArt.src = t.art;
+      miniArt.alt = `${t.title} artwork`;
+    }
+    if (miniTitle) miniTitle.textContent = t.title || "LYRA Radio";
+    if (miniArtist) miniArtist.textContent = t.artist || "Streaming Live";
+  }
+
+  function syncMiniPlayerUI(playing) {
+    if (playing) {
+      hasStartedPlayback = true;
+      miniDismissed = false;
+    }
+    if (miniPlayBtn) miniPlayBtn.textContent = playing ? "⏸" : "▶";
+    if (miniEq) miniEq.classList.toggle("is-paused", !playing);
+    updateMiniVisibility();
+  }
+
+  if (floatingMiniPlayer && previewSectionEl && "IntersectionObserver" in window) {
+    const previewObs = new IntersectionObserver(
+      (entries) => {
+        previewInView = entries[0]?.isIntersecting ?? true;
+        updateMiniVisibility();
+      },
+      { threshold: 0.15 }
+    );
+    previewObs.observe(previewSectionEl);
+  }
+
+  miniPlayBtn?.addEventListener("click", () => {
+    if (isPlaying) pauseCurrent();
+    else playCurrent();
+  });
+  miniPrevBtn?.addEventListener("click", () => loadTrack(trackIndex - 1, true));
+  miniNextBtn?.addEventListener("click", () => loadTrack(trackIndex + 1, true));
+  miniJumpBtn?.addEventListener("click", () => {
+    previewSectionEl?.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+  miniCloseBtn?.addEventListener("click", () => {
+    miniDismissed = true;
+    updateMiniVisibility();
+  });
+
   document.querySelectorAll(".js-download-apk").forEach((el) => {
     el.addEventListener("click", () => {
+      if (typeof liveDownloadTotal === "number") {
+        liveDownloadTotal += 1;
+        renderDownloadCounter(liveDownloadTotal);
+      }
       showToast("Downloading LYRA-v1.6.47.apk (88.0 MB) — tap the file when done to install.");
       if (installSmartBanner) installSmartBanner.hidden = false;
       if (postDownloadBar) postDownloadBar.hidden = false;
