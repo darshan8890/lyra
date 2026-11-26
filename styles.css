@@ -3294,25 +3294,29 @@ kbd {
 
 .never-list li {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px 14px;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
   border-radius: 14px;
   background: rgba(10, 12, 16, 0.56);
   border: 1px solid rgba(143, 191, 140, 0.16);
 }
 
 .never-mark {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
-  display: grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  font-size: 0.72rem;
-  font-weight: 700;
   color: var(--ok);
   background: rgba(143, 191, 140, 0.16);
+  border: 1px solid rgba(143, 191, 140, 0.28);
+}
+
+.never-mark svg {
+  display: block;
 }
 
 .never-list strong {
@@ -3484,6 +3488,12 @@ kbd {
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--elevated);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
   cursor: pointer;
 }
 
