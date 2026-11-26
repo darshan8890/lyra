@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07080c" />
+  <title>Privacy, Terms &amp; Support — LYRA for Android</title>
+  <meta name="description" content="Read LYRA's privacy policy, terms of use, copyright notice, and direct support channels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LYRA — Privacy Policy, Terms &amp; Support" />
+  <meta property="og:description" content="How LYRA protects your offline music library on-device with zero ads, zero trackers, and clear support channels." />
+  <meta property="og:image" content="https://darshan8890.github.io/lyra/assets/lyra-logo.png?v=2" />
+  <link rel="icon" type="image/png" href="assets/lyra-logo.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=18" />
+</head>
+<body>
+  <div class="ambient-stage" aria-hidden="true">
+    <canvas id="ambientCanvas" class="ambient-canvas"></canvas>
+    <div class="orb orb-gold"></div>
+    <div class="orb orb-amethyst"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- Sticky Navigation -->
+  <header class="site-header" id="top">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html#top" aria-label="LYRA Home">
+        <span class="brand-mark">
+          <img src="assets/lyra-logo.png?v=2" alt="LYRA logo" width="42" height="42" />
+        </span>
+        <span class="brand-text">
+          <strong>LYRA</strong>
+          <small>v1.6.47</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#screens">Screens</a>
+        <a href="index.html#moods">Soundscapes</a>
+        <a href="index.html#download">Download</a>
+        <a href="index.html#install">Install</a>
+        <a href="index.html#releases">Updates</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-glass btn-sm js-open-catalog" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span>Radio Catalog</span>
+        </button>
+        <a class="btn btn-primary btn-sm js-download-apk" href="https://github.com/darshan8890/lyra/releases/download/v1.6.47/LYRA-v1.6.47.apk" download="LYRA-v1.6.47.apk">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          <span>Download APK</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer" hidden>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#screens">App Screens</a>
+      <a href="index.html#moods">Soundscapes</a>
+      <a href="index.html#download">Direct Download</a>
+      <a href="index.html#install">How to Install</a>
+      <a href="index.html#releases">What’s New</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="about.html">About</a>
+      <a class="is-active" href="privacy.html" aria-current="page">Privacy &amp; Terms</a>
+      <button class="btn btn-glass js-open-catalog" type="button">Browse Radio Catalog</button>
+      <a class="btn btn-primary js-download-apk" href="https://github.com/darshan8890/lyra/releases/download/v1.6.47/LYRA-v1.6.47.apk" download="LYRA-v1.6.47.apk">Download LYRA v1.6.47 APK</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero container">
+      <a class="about-back hero-enter" style="--d: 0ms" href="index.html">← Back to LYRA Home</a>
+      <span class="eyebrow hero-enter" style="--d: 60ms">Legal, Privacy &amp; Support</span>
+      <h1 class="hero-enter" style="--d: 120ms">
+        Clear rules,<br />
+        <span class="hero-accent">zero hidden tracking.</span>
+      </h1>
+      <p class="hero-lead hero-enter" style="--d: 180ms">
+        Last updated November 2026. Plain-language documentation covering how LYRA handles your device library, online radio streams, terms of use, and support channels.
+      </p>
+      <div class="legal-jump hero-enter" style="--d: 240ms">
+        <a class="btn btn-glass btn-sm" href="#privacy">Privacy Policy</a>
+        <a class="btn btn-glass btn-sm" href="#terms">Terms &amp; Copyright</a>
+        <a class="btn btn-glass btn-sm" href="#support">Support &amp; Feedback</a>
+      </div>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section class="section container" id="privacy">
+      <div class="section-head reveal">
+        <span class="eyebrow">Privacy Policy</span>
+        <h2>Your music library stays on your device.</h2>
+        <p>LYRA is built around local-first processing with no ad networks and no data brokers.</p>
+      </div>
+
+      <div class="legal-grid">
+        <article class="legal-card reveal">
+          <h3>1. Local Audio &amp; Playlists</h3>
+          <p>
+            LYRA uses Android's <code>READ_MEDIA_AUDIO</code> (or <code>READ_EXTERNAL_STORAGE</code> on Android 8–12) solely to scan and play audio files stored on your phone. Your local tracks, folders, and playlists are never uploaded to external servers.
+          </p>
+        </article>
+
+        <article class="legal-card reveal">
+          <h3>2. On-Device AI &amp; Translations</h3>
+          <p>
+            Music Copilot intent matching, Music Lab Equalizer settings, and ML Kit lyric translations run directly on your Android device. Search prompts inside Music Copilot do not require cloud AI keys.
+          </p>
+        </article>
+
+        <article class="legal-card reveal">
+          <h3>3. LYRA Radio, Lyrics &amp; Optional Sign-In</h3>
+          <p>
+            When online, LYRA connects to LYRA Radio servers to stream curated radio tracks and artwork, and queries LRCLIB for synced lyrics. If you sign in with Google, Microsoft, or a LYRA username, only basic identity/account state is used for your profile.
+          </p>
+        </article>
+
+        <article class="legal-card reveal">
+          <h3>4. Website &amp; Zero Ad Trackers</h3>
+          <p>
+            Neither the LYRA Android app nor this website runs third-party ad SDKs or invasive cross-site tracking cookies. Any optional website traffic metrics use cookieless privacy-friendly analytics only.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Terms & Copyright -->
+    <section class="section container" id="terms">
+      <div class="section-head reveal">
+        <span class="eyebrow">Terms of Use &amp; Copyright</span>
+        <h2>Responsible use &amp; APK integrity.</h2>
+      </div>
+
+      <div class="legal-grid">
+        <article class="legal-card reveal">
+          <h3>Official Distribution</h3>
+          <p>
+            LYRA (<code>com.aura.music</code>) is provided free of charge for personal, non-commercial listening. Only install builds downloaded from the official LYRA website or <code>darshan8890/lyra</code> GitHub Releases, and verify the SHA-256 checksum on the <a class="link-mono" href="about.html#verify">About &amp; Safety</a> page.
+          </p>
+        </article>
+
+        <article class="legal-card reveal">
+          <h3>Copyright &amp; Takedown Requests</h3>
+          <p>
+            LYRA Radio streams are curated for discovery. If you are a rights holder and believe a streamed track or artwork on LYRA Radio requires attribution update or removal, please open a takedown notice via our Support channel below and it will be addressed promptly.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Support & Feedback -->
+    <section class="section container" id="support">
+      <div class="section-head reveal">
+        <span class="eyebrow">Support &amp; Community</span>
+        <h2>Need help, spotted a bug, or want to request a track?</h2>
+        <p>Reach creator <strong>Darshan Panchal</strong> directly through the official LYRA repository channels.</p>
+      </div>
+
+      <div class="support-grid">
+        <article class="legal-card reveal">
+          <span class="pillar-tag">Bugs &amp; Suggestions</span>
+          <h3>Report an Issue or Feature Idea</h3>
+          <p>Found a glitch on a specific Android device or have an idea for Music Lab or Copilot? Open an issue directly on GitHub.</p>
+          <a class="btn btn-primary btn-sm" href="https://github.com/darshan8890/lyra/issues/new" target="_blank" rel="noopener noreferrer">Open GitHub Issue ↗</a>
+        </article>
+
+        <article class="legal-card reveal">
+          <span class="pillar-tag">Releases &amp; Updates</span>
+          <h3>Inspect Official Builds</h3>
+          <p>Check all release notes, published APK assets, and SHA-256 digests directly on the official GitHub Releases page.</p>
+          <a class="btn btn-outline btn-sm" href="https://github.com/darshan8890/lyra/releases" target="_blank" rel="noopener noreferrer">Browse Releases ↗</a>
+        </article>
+
+        <article class="legal-card reveal">
+          <span class="pillar-tag">Security &amp; Permissions</span>
+          <h3>Audit the App Manifest</h3>
+          <p>Review every Android permission LYRA uses and verify the exact `v1.6.47` SHA-256 fingerprint before installing.</p>
+          <a class="btn btn-glass btn-sm" href="about.html">View Safety Audit →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/lyra-logo.png?v=2" alt="LYRA logo" width="32" height="32" />
+        <div>
+          <strong>LYRA</strong>
+          <p>Your music. Your device. Your intelligence.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#download">Download v1.6.47</a>
+        <a href="about.html">About &amp; Safety</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="privacy.html#terms">Terms</a>
+        <a href="privacy.html#support">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Searchable Live Radio Catalog Drawer -->
+  <div class="drawer-backdrop" id="catalogBackdrop" hidden></div>
+  <aside class="catalog-drawer" id="catalogDrawer" hidden role="dialog" aria-modal="true" aria-labelledby="catalogDrawerTitle">
+    <div class="catalog-head">
+      <div>
+        <span class="eyebrow">Live Streaming</span>
+        <h3 id="catalogDrawerTitle">LYRA Radio Catalog</h3>
+      </div>
+      <div class="catalog-head-right">
+        <span class="version-badge" id="catalogCountBadge">0 Tracks</span>
+        <button class="modal-close catalog-close" id="closeCatalogBtn" type="button" aria-label="Close catalog drawer">✕</button>
+      </div>
+    </div>
+
+    <div class="catalog-search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="catalogSearchInput" type="search" placeholder="Search song, artist, album, or genre…" autocomplete="off" />
+      <button class="catalog-clear" id="catalogClearBtn" type="button" hidden aria-label="Clear search">✕</button>
+    </div>
+
+    <div class="catalog-chips" id="catalogGenreChips"></div>
+
+    <div class="catalog-list-wrap">
+      <ul class="catalog-list" id="catalogList"></ul>
+      <p class="catalog-empty" id="catalogEmpty" hidden>No matching tracks found. Try another keyword or genre.</p>
+    </div>
+  </aside>
+
+  <!-- Post-Download Smart Helper -->
+  <div class="post-download-bar" id="postDownloadBar" hidden role="region" aria-label="Install next steps">
+    <div class="pdb-head">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <strong>Downloading LYRA-v1.6.47.apk…</strong>
+      <button class="pdb-close" id="closePostDownloadBtn" type="button" aria-label="Dismiss install helper">✕</button>
+    </div>
+    <p>When finished, tap the APK file and choose <b>Allow from this source</b> if Android prompts.</p>
+    <a class="btn btn-sm btn-primary" href="index.html#install">See 3-Step Guide →</a>
+  </div>
+
+  <!-- Friendly Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="app.js?v=7"></script>
+  <!-- Cloudflare Web Analytics (cookieless): paste your token from Cloudflare Dashboard -> Web Analytics
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_CLOUDFLARE_ANALYTICS_TOKEN"}'></script>
+  -->
+</body>
+</html>
