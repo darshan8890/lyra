@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=17" />
+  <link rel="stylesheet" href="styles.css?v=18" />
 </head>
 <body>
   <div class="ambient-stage" aria-hidden="true">
@@ -137,6 +137,11 @@
           <div class="trust-item">
             <span class="trust-label">Build</span>
             <strong>v1.6.47 (60)</strong>
+          </div>
+          <div class="trust-divider" aria-hidden="true"></div>
+          <div class="trust-item">
+            <span class="trust-label">Releases</span>
+            <strong id="heroDownloadCount">Official · Direct</strong>
           </div>
           <div class="trust-divider" aria-hidden="true"></div>
           <div class="trust-item">
@@ -617,6 +622,66 @@
       </div>
     </section>
 
+    <!-- LYRA vs Others Comparison -->
+    <section class="section container" id="compare">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Listeners Switch</span>
+        <h2>How LYRA compares to standard music apps.</h2>
+        <p>Keep your local audio files without giving up modern streaming, lyrics, and intelligence.</p>
+      </div>
+
+      <div class="compare-wrap reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th scope="col">Capability</th>
+              <th scope="col" class="col-lyra">LYRA (v1.6.47)</th>
+              <th scope="col">Streaming Apps</th>
+              <th scope="col">Basic Offline Players</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Offline MP3, FLAC &amp; WAV Ownership</td>
+              <td class="col-lyra"><span class="cmp-yes">✓ Full Local Control</span></td>
+              <td><span class="cmp-no">✕ Encrypted Cache Only</span></td>
+              <td><span class="cmp-yes">✓ Local Files</span></td>
+            </tr>
+            <tr>
+              <td>Free &amp; Ad-Free Experience</td>
+              <td class="col-lyra"><span class="cmp-yes">✓ Zero Ads · Zero Trackers</span></td>
+              <td><span class="cmp-no">✕ Ads or Monthly Fee</span></td>
+              <td><span class="cmp-no">✕ Banner Ads Common</span></td>
+            </tr>
+            <tr>
+              <td>Worldwide Radio + Artist Portraits</td>
+              <td class="col-lyra"><span class="cmp-yes">✓ Included Free</span></td>
+              <td><span class="cmp-yes">✓ Streaming Catalog</span></td>
+              <td><span class="cmp-no">✕ Offline Only</span></td>
+            </tr>
+            <tr>
+              <td>On-Device AI Music Copilot</td>
+              <td class="col-lyra"><span class="cmp-yes">✓ Runs Locally Offline</span></td>
+              <td><span class="cmp-mid">~ Cloud / Paid Tier</span></td>
+              <td><span class="cmp-no">✕ Not Included</span></td>
+            </tr>
+            <tr>
+              <td>Synced Lyrics &amp; On-Device Translation</td>
+              <td class="col-lyra"><span class="cmp-yes">✓ ML Kit Free Offline</span></td>
+              <td><span class="cmp-mid">~ Often Paywalled</span></td>
+              <td><span class="cmp-no">✕ Basic or None</span></td>
+            </tr>
+            <tr>
+              <td>5-Band Music Lab EQ &amp; Loudness Match</td>
+              <td class="col-lyra"><span class="cmp-yes">✓ Unified Library &amp; Radio</span></td>
+              <td><span class="cmp-mid">~ Basic Presets</span></td>
+              <td><span class="cmp-mid">~ Varies by App</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <!-- Dedicated Direct Download Hub -->
     <section class="section container" id="download">
       <div class="download-hub reveal">
@@ -651,6 +716,10 @@
             <div>
               <dt>Package ID</dt>
               <dd><code>com.aura.music</code></dd>
+            </div>
+            <div>
+              <dt>Verified Installs</dt>
+              <dd id="hubDownloadCount">Live on GitHub Releases</dd>
             </div>
           </dl>
 
@@ -775,6 +844,35 @@
       </div>
     </section>
 
+    <!-- Public Roadmap -->
+    <section class="section container" id="roadmap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Public Roadmap</span>
+        <h2>Where LYRA is headed next.</h2>
+        <p>Built openly with steady updates — see what just shipped and what is actively in development.</p>
+      </div>
+
+      <div class="roadmap-grid">
+        <article class="roadmap-card is-done reveal">
+          <span class="roadmap-status">✓ Shipped · v1.6.47</span>
+          <h3>Live Radio, Portraits &amp; Loudness</h3>
+          <p>Worldwide LYRA Radio streaming, dedicated artist portraits, synced looping canvas, and unified loudness matching across library and radio.</p>
+        </article>
+
+        <article class="roadmap-card is-active reveal">
+          <span class="roadmap-status">● In Progress</span>
+          <h3>Android Auto &amp; Theme Packs</h3>
+          <p>Refining Android Auto queue browsing, introducing custom rose-gold &amp; midnight accent themes, and expanding Radio mood stations.</p>
+        </article>
+
+        <article class="roadmap-card reveal">
+          <span class="roadmap-status">○ Planned</span>
+          <h3>Smart Folders &amp; Listener Requests</h3>
+          <p>Folder exclusion rules, backup/export for playlists &amp; Music DNA snapshots, and direct community song requests for LYRA Radio.</p>
+        </article>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="section container" id="faq">
       <div class="section-head reveal">
@@ -846,9 +944,10 @@
       <div class="footer-links">
         <a href="#features">Features</a>
         <a href="#download">Download v1.6.47</a>
-        <a href="#install">Install Guide</a>
-        <a href="#faq">FAQ</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About &amp; Safety</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="privacy.html#terms">Terms</a>
+        <a href="privacy.html#support">Support</a>
       </div>
     </div>
   </footer>
@@ -911,6 +1010,23 @@
     </div>
   </aside>
 
+  <!-- Floating Persistent Mini-Player Bar -->
+  <div class="floating-mini-player" id="floatingMiniPlayer" hidden role="region" aria-label="Mini music player">
+    <img class="fmp-art" id="miniArt" src="assets/bg_genre_nightdrive.png" alt="" width="40" height="40" />
+    <div class="fmp-meta">
+      <strong id="miniTitle">LYRA Radio</strong>
+      <small id="miniArtist">Streaming Live</small>
+    </div>
+    <div class="fmp-eq" id="miniEq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="fmp-controls">
+      <button class="fmp-btn" id="miniPrevBtn" type="button" aria-label="Previous track">⏮</button>
+      <button class="fmp-btn fmp-play" id="miniPlayBtn" type="button" aria-label="Play or pause">▶</button>
+      <button class="fmp-btn" id="miniNextBtn" type="button" aria-label="Next track">⏭</button>
+      <button class="fmp-btn" id="miniJumpBtn" type="button" title="Jump back to player" aria-label="Scroll to player">↑</button>
+      <button class="fmp-btn" id="miniCloseBtn" type="button" title="Hide mini player" aria-label="Close mini player">✕</button>
+    </div>
+  </div>
+
   <!-- Post-Download Smart Helper -->
   <div class="post-download-bar" id="postDownloadBar" hidden role="region" aria-label="Install next steps">
     <div class="pdb-head">
@@ -926,6 +1042,9 @@
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <script src="qr.js"></script>
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=7"></script>
+  <!-- Cloudflare Web Analytics (cookieless): paste your token from Cloudflare Dashboard -> Web Analytics
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_CLOUDFLARE_ANALYTICS_TOKEN"}'></script>
+  -->
 </body>
 </html>
