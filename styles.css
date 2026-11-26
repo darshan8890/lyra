@@ -3129,6 +3129,9 @@ kbd {
 }
 
 .about-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 52px 0 28px;
 }
 
@@ -3136,14 +3139,20 @@ kbd {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 18px;
-  font-size: 0.88rem;
+  padding: 7px 14px;
+  margin-bottom: 24px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(26, 28, 36, 0.72);
+  font-size: 0.84rem;
   color: var(--muted);
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .about-back:hover {
   color: var(--gold-bright);
+  border-color: var(--line-gold);
+  background: rgba(34, 37, 47, 0.9);
   transform: translateX(-3px);
 }
 
