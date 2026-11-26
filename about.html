@@ -4,17 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#07080c" />
-  <title>About LYRA — Philosophy, Craft &amp; On-Device Music Intelligence</title>
-  <meta name="description" content="Learn about LYRA for Android: built for listeners who value offline library ownership, zero ads, on-device Music Copilot, translated lyrics, and Media3 ExoPlayer sound." />
+  <title>About &amp; Safety — LYRA for Android</title>
+  <meta name="description" content="Verify LYRA v1.6.47 safety, SHA-256 checksum, exact Android permissions, and our zero-ad, on-device privacy commitment." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="About LYRA — Your Music. Your Device. Your Intelligence." />
-  <meta property="og:description" content="The story and architecture behind LYRA: private on-device AI, Media3 ExoPlayer audio, synced ML Kit lyric translation, and worldwide LYRA Radio." />
+  <meta property="og:title" content="About LYRA — Built for Trust, Privacy &amp; Music Ownership" />
+  <meta property="og:description" content="Inspect every Android permission LYRA uses, verify the official SHA-256 APK checksum, and learn how on-device music intelligence works." />
   <meta property="og:image" content="https://darshan8890.github.io/lyra/assets/lyra-logo.png?v=2" />
   <link rel="icon" type="image/png" href="assets/lyra-logo.png?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
   <div class="ambient-stage" aria-hidden="true">
@@ -78,53 +78,177 @@
   </header>
 
   <main>
-    <!-- About Page Hero -->
+    <!-- About & Trust Hero -->
     <section class="about-hero container">
       <a class="about-back hero-enter" style="--d: 0ms" href="index.html">← Back to LYRA Home</a>
-      <span class="eyebrow hero-enter" style="--d: 60ms">About LYRA</span>
+      <span class="eyebrow hero-enter" style="--d: 60ms">About &amp; Security Transparency</span>
       <h1 class="hero-enter" style="--d: 120ms">
-        Built for listeners who still<br />
-        <span class="hero-accent">own their music.</span>
+        Built to be verified,<br />
+        <span class="hero-accent">not blindly trusted.</span>
       </h1>
       <p class="hero-lead hero-enter" style="--d: 180ms">
-        Modern streaming apps buried personal MP3 &amp; FLAC libraries behind ads, paywalls, and noisy algorithms.
-        LYRA brings back complete local ownership on Android — elevated with live worldwide LYRA Radio, private on-device AI curation, and studio-grade audio shaping.
+        Installing an APK from the web should never feel like guesswork. Here is everything inside LYRA — our exact Android permissions, verified SHA-256 build fingerprint, on-device privacy promise, and why we ship directly without ads or trackers.
       </p>
 
       <div class="trust-strip hero-enter" style="--d: 240ms">
         <div class="trust-item">
-          <span class="trust-label">Package</span>
+          <span class="trust-label">Official Package</span>
           <strong>com.aura.music</strong>
         </div>
         <div class="trust-divider" aria-hidden="true"></div>
         <div class="trust-item">
-          <span class="trust-label">Platform</span>
-          <strong>Android 8.0 – 15</strong>
+          <span class="trust-label">Trackers &amp; Ads</span>
+          <strong>Zero · Clean Build</strong>
         </div>
         <div class="trust-divider" aria-hidden="true"></div>
         <div class="trust-item">
-          <span class="trust-label">Audio Engine</span>
-          <strong>Media3 ExoPlayer</strong>
+          <span class="trust-label">Sensitive Data</span>
+          <strong>No Camera · Mic · GPS</strong>
         </div>
         <div class="trust-divider" aria-hidden="true"></div>
         <div class="trust-item">
-          <span class="trust-label">Pricing &amp; Ads</span>
-          <strong>100% Free · Zero Ads</strong>
+          <span class="trust-label">Verification</span>
+          <button class="link-mono js-copy-sha" type="button">Copy SHA-256</button>
         </div>
       </div>
     </section>
 
-    <!-- Story & Pillars -->
+    <!-- Permission Transparency -->
+    <section class="section container" id="permissions">
+      <div class="section-head reveal">
+        <span class="eyebrow">Android Manifest Audit</span>
+        <h2>Every permission LYRA asks for — and what it never touches.</h2>
+        <p>You can check these exact permissions in Android Settings before and after installing <code>com.aura.music</code>.</p>
+      </div>
+
+      <div class="perms-grid">
+        <div class="perm-panel reveal">
+          <div class="perm-panel-head">
+            <span class="version-badge">Permissions Used</span>
+            <span class="build-tag">Only what playback requires</span>
+          </div>
+          <ul class="perm-list">
+            <li>
+              <strong>Audio Library Access</strong>
+              <code>READ_MEDIA_AUDIO</code>
+              <span>Scans and plays the local music files stored on your device. Never reads photos, videos, or documents.</span>
+            </li>
+            <li>
+              <strong>Background &amp; Screen-Off Playback</strong>
+              <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK · WAKE_LOCK</code>
+              <span>Keeps your songs and LYRA Radio playing smoothly when your screen is locked or while switching apps.</span>
+            </li>
+            <li>
+              <strong>Player Controls Notification</strong>
+              <code>POST_NOTIFICATIONS</code>
+              <span>Shows the lock-screen and shade mini player with play, pause, and skip buttons.</span>
+            </li>
+            <li>
+              <strong>Music Lab Equalizer</strong>
+              <code>MODIFY_AUDIO_SETTINGS</code>
+              <span>Applies the 5-band Equalizer, stereo balance, and loudness matching to your audio session.</span>
+            </li>
+            <li>
+              <strong>Radio, Lyrics &amp; Optional Sign-In</strong>
+              <code>INTERNET · ACCESS_NETWORK_STATE · GET_ACCOUNTS</code>
+              <span>Streams LYRA Radio, fetches synced lyrics, and lets you pick an existing Google/Microsoft account on your phone if you choose to sign in.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="perm-panel is-safe reveal">
+          <div class="perm-panel-head">
+            <span class="perm-safe-badge">Strictly Never Requested</span>
+            <span class="build-tag">Zero spyware surface</span>
+          </div>
+          <ul class="never-list">
+            <li>
+              <span class="never-mark" aria-hidden="true">✕</span>
+              <div>
+                <strong>No Camera or Microphone</strong>
+                <p>LYRA never records audio or accesses your camera.</p>
+              </div>
+            </li>
+            <li>
+              <span class="never-mark" aria-hidden="true">✕</span>
+              <div>
+                <strong>No GPS or Location Tracking</strong>
+                <p>Your physical location is never requested or stored.</p>
+              </div>
+            </li>
+            <li>
+              <span class="never-mark" aria-hidden="true">✕</span>
+              <div>
+                <strong>No Contacts, SMS, or Call Logs</strong>
+                <p>Zero access to your messages, phone numbers, or call history.</p>
+              </div>
+            </li>
+            <li>
+              <span class="never-mark" aria-hidden="true">✕</span>
+              <div>
+                <strong>No App-Install or Accessibility Control</strong>
+                <p>Cannot install hidden apps or read what appears on other screens.</p>
+              </div>
+            </li>
+            <li>
+              <span class="never-mark" aria-hidden="true">✕</span>
+              <div>
+                <strong>No Ad Networks or Selling Data</strong>
+                <p>Zero ad SDKs, zero popup banners, and no personal library uploads.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cryptographic Build Verification -->
+    <section class="section container" id="verify">
+      <div class="trust-verify-card reveal">
+        <div class="tvc-left">
+          <span class="eyebrow">Tamper-Proof Verification</span>
+          <h2>Verify the APK yourself before tapping Install.</h2>
+          <p>
+            Every official LYRA release is published on GitHub Releases with an immutable SHA-256 fingerprint. You can paste this hash into any virus scanner (like VirusTotal) or compare it against your downloaded file to confirm not a single byte was altered.
+          </p>
+          <div class="tvc-actions">
+            <button class="btn btn-primary js-copy-sha" type="button">Copy Official SHA-256</button>
+            <a class="btn btn-outline" href="https://github.com/darshan8890/lyra/releases/tag/v1.6.47" target="_blank" rel="noopener noreferrer">View GitHub Release ↗</a>
+          </div>
+        </div>
+
+        <div class="tvc-right">
+          <div class="tvc-row">
+            <span>File Name</span>
+            <strong>LYRA-v1.6.47.apk</strong>
+          </div>
+          <div class="tvc-row">
+            <span>Exact Size</span>
+            <strong>92,237,966 bytes (88.0 MB)</strong>
+          </div>
+          <div class="tvc-row">
+            <span>Package ID</span>
+            <code>com.aura.music</code>
+          </div>
+          <div class="tvc-hash">
+            <span>SHA-256 Digest</span>
+            <code>E4E89D541058EDFD20AE5773EA0F7A87966E3380808C956F0B9186EAFB5D33C8</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Direct APK + Story -->
     <section class="section container">
       <div class="about-shell reveal">
         <div class="about-story">
-          <span class="eyebrow">Why LYRA Exists</span>
-          <h2>Calm obsidian design meets local intelligence.</h2>
+          <span class="eyebrow">Why Direct APK?</span>
+          <h2>Independent music software without store compromises.</h2>
           <p>
-            LYRA started with a simple goal: an offline music player shouldn’t feel stuck in 2012. Every screen in LYRA — from dynamic artwork-tinted player backdrops and live waveform Home Screen widgets to shareable lyric cards — is crafted to feel calm, tactile, and deliberate.
+            LYRA was built for listeners who still value owning MP3 &amp; FLAC files on their device — paired with the refinement of live radio, translated lyrics, and Music Copilot.
           </p>
           <p>
-            When you want something new, LYRA Radio lets you stream curated tracks with artist portraits and save favorites offline for commutes or flights. When you’re offline, your entire library, playlists, Music Copilot, Music Lab Equalizer, and lyric translations keep working without touching the cloud.
+            Shipping directly lets us push clean updates immediately and keep LYRA 100% free and ad-free. When Android shows its standard <em>“Install unknown apps”</em> notice, that simply means the APK came from your browser rather than Google Play — you can toggle browser permission back off right after installing.
           </p>
           <blockquote class="about-quote">“Your music. Your device. Your intelligence.”</blockquote>
         </div>
@@ -133,68 +257,27 @@
           <article class="pillar-card">
             <span class="pillar-tag">01 · Privacy</span>
             <h3>On-Device Intelligence</h3>
-            <p>Music Copilot intent matching, local song indexing, and ML Kit lyric translations run directly on your Android device.</p>
+            <p>Music Copilot matching, local song indexing, and ML Kit lyric translations run directly on your Android phone.</p>
           </article>
 
           <article class="pillar-card">
             <span class="pillar-tag">02 · Pure Audio</span>
             <h3>Media3 ExoPlayer Core</h3>
-            <p>Plays MP3, FLAC, WAV, M4A/AAC, OGG, and Opus smoothly with gapless playback, stereo balance, and loudness matching.</p>
+            <p>Gapless playback for MP3, FLAC, WAV, M4A, OGG, and Opus with 5-band EQ and loudness matching.</p>
           </article>
 
           <article class="pillar-card">
             <span class="pillar-tag">03 · Zero Noise</span>
-            <h3>Free &amp; Ad-Free</h3>
-            <p>No banner ads, no video interruptions, no paywalls, and no third-party ad trackers — just music.</p>
+            <h3>No Ads or Paywalls</h3>
+            <p>No popups, no subscriptions, and no tracking — every core feature works offline from day one.</p>
           </article>
 
           <article class="pillar-card">
             <span class="pillar-tag">04 · Craft</span>
             <h3>Obsidian &amp; Rose Gold</h3>
-            <p>Crafted independently with synced video canvas, Music DNA listening stats, customizable playlists, and home widgets.</p>
+            <p>Synced video canvas, Music DNA stats, Home Screen waveform widgets, and shareable lyric cards.</p>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- Under the Hood -->
-    <section class="section container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Under the Hood</span>
-        <h2>Designed with transparency from the first byte.</h2>
-        <p>Everything LYRA promises on the surface is backed by clean Android engineering underneath.</p>
-      </div>
-
-      <div class="about-tech-grid">
-        <article class="bento-card reveal">
-          <div class="bento-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Verified Direct Builds</h3>
-          <p>
-            Every APK release is signed directly from the LYRA Android project and published with its exact SHA-256 checksum so you can verify what you install.
-          </p>
-        </article>
-
-        <article class="bento-card reveal">
-          <div class="bento-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
-          </div>
-          <h3>Hybrid Library &amp; Radio</h3>
-          <p>
-            Local tracks and LYRA Radio share one unified queue, one 5-band Equalizer, and automatic loudness matching so volume never jumps between sources.
-          </p>
-        </article>
-
-        <article class="bento-card reveal">
-          <div class="bento-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M9 9h6"/><path d="M9 13h4"/></svg>
-          </div>
-          <h3>Lyrics Without API Keys</h3>
-          <p>
-            Synced <code>.lrc</code> and LRCLIB lyrics pair with on-device ML Kit translation and transliteration — working seamlessly without cloud setup.
-          </p>
-        </article>
       </div>
     </section>
 
@@ -202,14 +285,14 @@
     <section class="section container">
       <div class="about-cta-card reveal">
         <div>
-          <span class="eyebrow">Ready to Listen?</span>
-          <h2>Experience LYRA v1.6.47 on your Android phone.</h2>
-          <p>Download the direct APK, test the live web player, or browse all streaming tracks in the Radio Catalog.</p>
+          <span class="eyebrow">Ready to Listen Safely?</span>
+          <h2>Download LYRA v1.6.47 or test it in your browser first.</h2>
+          <p>Try the live Radio stream, synced lyrics, and 5-band Music Lab EQ right on the home page before installing.</p>
         </div>
         <div class="about-cta-actions">
           <a class="btn btn-primary btn-lg btn-shimmer js-download-apk" href="https://github.com/darshan8890/lyra/releases/download/v1.6.47/LYRA-v1.6.47.apk" download="LYRA-v1.6.47.apk">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-            <span>Download LYRA APK</span>
+            <span>Download Verified APK</span>
             <span class="btn-tag">v1.6.47</span>
           </a>
           <a class="btn btn-glass btn-lg" href="index.html#preview">Try Live Web Preview</a>
