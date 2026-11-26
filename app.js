@@ -1071,9 +1071,70 @@
     if (e.key === "Escape" && qrModal && !qrModal.hidden) setModalOpen(false);
   });
 
+  // Post-Download Smart Install Guide
+  const installSmartBanner = document.getElementById("installSmartBanner");
+  const installSmartText = document.getElementById("installSmartText");
+  const installNextStepBtn = document.getElementById("installNextStepBtn");
+  const postDownloadBar = document.getElementById("postDownloadBar");
+  const jumpToInstallBtn = document.getElementById("jumpToInstallBtn");
+  const closePostDownloadBtn = document.getElementById("closePostDownloadBtn");
+  const stepCards = document.querySelectorAll(".step-card[data-step]");
+  let activeInstallStep = 1;
+  let installAutoTimer = null;
+
+  const INSTALL_STEP_MSG = {
+    1: "Step 1 of 3: Saving LYRA-v1.6.47.apk (88.0 MB) to your device.",
+    2: "Step 2 of 3: Tap the downloaded APK and choose Settings → Allow from this source.",
+    3: "Step 3 of 3: Tap Install, open LYRA, and grant audio access for your songs.",
+  };
+
+  function setInstallStep(step) {
+    activeInstallStep = ((step - 1) % 3) + 1;
+    stepCards.forEach((card) => {
+      card.classList.toggle("is-current", Number(card.dataset.step) === activeInstallStep);
+    });
+    if (installSmartText) {
+      installSmartText.textContent = INSTALL_STEP_MSG[activeInstallStep] || INSTALL_STEP_MSG[1];
+    }
+    if (installNextStepBtn) {
+      installNextStepBtn.textContent = activeInstallStep === 3 ? "Restart Guide ↺" : "Next Step →";
+    }
+  }
+
+  stepCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      clearTimeout(installAutoTimer);
+      if (installSmartBanner) installSmartBanner.hidden = false;
+      setInstallStep(Number(card.dataset.step) || 1);
+    });
+  });
+
+  installNextStepBtn?.addEventListener("click", () => {
+    clearTimeout(installAutoTimer);
+    setInstallStep(activeInstallStep + 1);
+  });
+
+  jumpToInstallBtn?.addEventListener("click", () => {
+    if (postDownloadBar) postDownloadBar.hidden = true;
+    if (installSmartBanner) installSmartBanner.hidden = false;
+    setInstallStep(Math.max(2, activeInstallStep));
+    document.getElementById("install")?.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  closePostDownloadBtn?.addEventListener("click", () => {
+    if (postDownloadBar) postDownloadBar.hidden = true;
+  });
+
   document.querySelectorAll(".js-download-apk").forEach((el) => {
     el.addEventListener("click", () => {
       showToast("Downloading LYRA-v1.6.47.apk (88.0 MB) — tap the file when done to install.");
+      if (installSmartBanner) installSmartBanner.hidden = false;
+      if (postDownloadBar) postDownloadBar.hidden = false;
+      setInstallStep(1);
+      clearTimeout(installAutoTimer);
+      installAutoTimer = setTimeout(() => {
+        setInstallStep(2);
+      }, 4000);
     });
   });
 
@@ -2021,6 +2082,45 @@
     if (e.key === "Escape") {
       if (screenLightbox && !screenLightbox.hidden) closeScreenLightbox();
       if (catalogDrawer && !catalogDrawer.hidden) setCatalogOpen(false);
+      if (postDownloadBar && !postDownloadBar.hidden) postDownloadBar.hidden = true;
+      return;
+    }
+
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const activeEl = document.activeElement;
+    const tag = activeEl?.tagName || "";
+    if (["INPUT", "TEXTAREA", "SELECT"].includes(tag) || activeEl?.isContentEditable) return;
+
+    if (e.key === "/") {
+      e.preventDefault();
+      setCatalogOpen(true);
+      return;
+    }
+
+    if (e.key === "?") {
+      showToast("Shortcuts: Space (Play/Pause) · ←/→ (Skip) · / (Radio Catalog) · M (Mute)");
+      return;
+    }
+
+    if (e.code === "Space") {
+      if (["BUTTON", "A", "SUMMARY", "LABEL"].includes(tag)) return;
+      if (activeEl === progressTrackEl) return;
+      e.preventDefault();
+      if (isPlaying) pauseCurrent();
+      else playCurrent();
+      return;
+    }
+
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      if (activeEl === progressTrackEl || activeEl === screensTrack) return;
+      e.preventDefault();
+      loadTrack(e.key === "ArrowRight" ? trackIndex + 1 : trackIndex - 1, true);
+      return;
+    }
+
+    if (e.key === "m" || e.key === "M") {
+      audio.muted = !audio.muted;
+      showToast(audio.muted ? "Preview audio muted (M)" : "Preview audio unmuted (M)");
     }
   });
 
