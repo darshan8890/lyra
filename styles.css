@@ -1462,6 +1462,11 @@ kbd {
   padding: 64px 0;
 }
 
+section[id],
+.section[id] {
+  scroll-margin-top: 88px;
+}
+
 .section-head {
   max-width: 680px;
   margin-bottom: 34px;
