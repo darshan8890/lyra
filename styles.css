@@ -3200,6 +3200,203 @@ kbd {
   gap: 12px;
 }
 
+.teaser-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.teaser-pills span {
+  font-size: 0.76rem;
+  color: var(--ok);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(143, 191, 140, 0.1);
+  border: 1px solid rgba(143, 191, 140, 0.28);
+}
+
+/* Permissions & Verification on About Page */
+.perms-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+}
+
+.perm-panel {
+  padding: 26px;
+  border-radius: var(--radius-xl);
+  background: rgba(16, 18, 24, 0.86);
+  border: 1px solid var(--line);
+}
+
+.perm-panel.is-safe {
+  border-color: rgba(143, 191, 140, 0.34);
+  background: linear-gradient(160deg, rgba(143, 191, 140, 0.08), rgba(16, 18, 24, 0.92));
+}
+
+.perm-panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.perm-safe-badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.76rem;
+  color: var(--ok);
+  background: rgba(143, 191, 140, 0.14);
+  border: 1px solid rgba(143, 191, 140, 0.34);
+}
+
+.perm-list,
+.never-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.perm-list li {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(243, 231, 216, 0.07);
+}
+
+.perm-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.perm-list strong {
+  font-size: 0.96rem;
+}
+
+.perm-list code {
+  width: fit-content;
+  font-size: 0.72rem;
+}
+
+.perm-list span {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.never-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(10, 12, 16, 0.56);
+  border: 1px solid rgba(143, 191, 140, 0.16);
+}
+
+.never-mark {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ok);
+  background: rgba(143, 191, 140, 0.16);
+}
+
+.never-list strong {
+  display: block;
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.never-list p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.trust-verify-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, rgba(26, 28, 36, 0.85), rgba(14, 15, 21, 0.96));
+  border: 1px solid var(--line-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.tvc-left h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.55rem, 2.7vw, 2.15rem);
+  line-height: 1.15;
+}
+
+.tvc-left p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.tvc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tvc-right {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: rgba(8, 9, 14, 0.75);
+  border: 1px solid var(--line);
+  align-content: center;
+}
+
+.tvc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(243, 231, 216, 0.08);
+  font-size: 0.86rem;
+}
+
+.tvc-row span {
+  color: var(--muted);
+}
+
+.tvc-hash {
+  display: grid;
+  gap: 6px;
+}
+
+.tvc-hash span {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.tvc-hash code {
+  word-break: break-all;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  padding: 8px 10px;
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--line);
@@ -3393,7 +3590,9 @@ kbd {
   }
 
   .download-hub,
-  .about-shell {
+  .about-shell,
+  .perms-grid,
+  .trust-verify-card {
     grid-template-columns: 1fr;
   }
 
@@ -3428,7 +3627,9 @@ kbd {
   }
 
   .download-hub,
-  .about-shell {
+  .about-shell,
+  .perm-panel,
+  .trust-verify-card {
     padding: 24px 20px;
   }
 }
