@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=11" />
 </head>
 <body>
   <div class="ambient-stage" aria-hidden="true">
@@ -49,7 +49,7 @@
         <a href="#install">Install</a>
         <a href="#releases">Updates</a>
         <a href="#faq">FAQ</a>
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
       </nav>
 
       <div class="nav-actions">
@@ -75,7 +75,7 @@
       <a href="#install">How to Install</a>
       <a href="#releases">What’s New</a>
       <a href="#faq">FAQ</a>
-      <a href="#about">About</a>
+      <a href="about.html">About</a>
       <button class="btn btn-glass js-open-catalog" type="button">Browse Radio Catalog</button>
       <a class="btn btn-primary js-download-apk" href="https://github.com/darshan8890/lyra/releases/download/v1.6.47/LYRA-v1.6.47.apk" download="LYRA-v1.6.47.apk">Download LYRA v1.6.47 APK</a>
     </div>
@@ -810,46 +810,20 @@
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Page Teaser -->
     <section class="section container" id="about">
-      <div class="about-shell reveal">
-        <div class="about-story">
+      <div class="about-teaser reveal">
+        <div class="about-teaser-copy">
           <span class="eyebrow">About LYRA</span>
           <h2>Built for listeners who still own their music.</h2>
           <p>
-            LYRA was designed to bring together two worlds that rarely meet: the full privacy and ownership of an offline Android music library, and the modern polish of live radio discovery, synced translations, and intelligent mood curation.
+            Discover the story behind LYRA — why it stays 100% free &amp; ad-free, how on-device Music Copilot and ML Kit translations work, and the Media3 audio engine under the hood.
           </p>
-          <p>
-            Every core detail — from the on-device Music Copilot and ML Kit lyric translations to the 5-band Music Lab Equalizer — is crafted so your music stays fast, responsive, and personal without subscriptions, clutter, or ads.
-          </p>
-          <blockquote class="about-quote">“Your music. Your device. Your intelligence.”</blockquote>
         </div>
-
-        <div class="about-pillars">
-          <article class="pillar-card">
-            <span class="pillar-tag">01 · Privacy</span>
-            <h3>On-Device Intelligence</h3>
-            <p>Music Copilot matching, local library indexing, and lyric translations run directly on your Android phone.</p>
-          </article>
-
-          <article class="pillar-card">
-            <span class="pillar-tag">02 · Pure Audio</span>
-            <h3>Media3 ExoPlayer Core</h3>
-            <p>Supports MP3, FLAC, WAV, M4A, OGG, and Opus with gapless playback, stereo balance, and loudness matching.</p>
-          </article>
-
-          <article class="pillar-card">
-            <span class="pillar-tag">03 · Zero Noise</span>
-            <h3>Free &amp; Ad-Free</h3>
-            <p>No banner ads, no forced paywalls, and no third-party ad trackers — just your songs and LYRA Radio.</p>
-          </article>
-
-          <article class="pillar-card">
-            <span class="pillar-tag">04 · Craft</span>
-            <h3>Obsidian &amp; Rose Gold</h3>
-            <p>Crafted independently for Android 8.0–15 (<code>com.aura.music</code>) with live canvas, widgets, and lyric share cards.</p>
-          </article>
-        </div>
+        <a class="btn btn-glass btn-lg" href="about.html">
+          <span>Read About LYRA</span>
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
   </main>
@@ -869,7 +843,7 @@
         <a href="#download">Download v1.6.47</a>
         <a href="#install">Install Guide</a>
         <a href="#faq">FAQ</a>
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
       </div>
     </div>
   </footer>
@@ -947,6 +921,6 @@
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <script src="qr.js"></script>
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>
