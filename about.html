@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07080c" />
+  <title>About LYRA — Philosophy, Craft &amp; On-Device Music Intelligence</title>
+  <meta name="description" content="Learn about LYRA for Android: built for listeners who value offline library ownership, zero ads, on-device Music Copilot, translated lyrics, and Media3 ExoPlayer sound." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About LYRA — Your Music. Your Device. Your Intelligence." />
+  <meta property="og:description" content="The story and architecture behind LYRA: private on-device AI, Media3 ExoPlayer audio, synced ML Kit lyric translation, and worldwide LYRA Radio." />
+  <meta property="og:image" content="https://darshan8890.github.io/lyra/assets/lyra-logo.png?v=2" />
+  <link rel="icon" type="image/png" href="assets/lyra-logo.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=11" />
+</head>
+<body>
+  <div class="ambient-stage" aria-hidden="true">
+    <canvas id="ambientCanvas" class="ambient-canvas"></canvas>
+    <div class="orb orb-gold"></div>
+    <div class="orb orb-amethyst"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- Sticky Navigation -->
+  <header class="site-header" id="top">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html#top" aria-label="LYRA Home">
+        <span class="brand-mark">
+          <img src="assets/lyra-logo.png?v=2" alt="LYRA logo" width="42" height="42" />
+        </span>
+        <span class="brand-text">
+          <strong>LYRA</strong>
+          <small>v1.6.47</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#screens">Screens</a>
+        <a href="index.html#moods">Soundscapes</a>
+        <a href="index.html#download">Download</a>
+        <a href="index.html#install">Install</a>
+        <a href="index.html#releases">Updates</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="is-active" href="about.html" aria-current="page">About</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-glass btn-sm js-open-catalog" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span>Radio Catalog</span>
+        </button>
+        <a class="btn btn-primary btn-sm js-download-apk" href="https://github.com/darshan8890/lyra/releases/download/v1.6.47/LYRA-v1.6.47.apk" download="LYRA-v1.6.47.apk">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          <span>Download APK</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer" hidden>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#screens">App Screens</a>
+      <a href="index.html#moods">Soundscapes</a>
+      <a href="index.html#download">Direct Download</a>
+      <a href="index.html#install">How to Install</a>
+      <a href="index.html#releases">What’s New</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="is-active" href="about.html" aria-current="page">About</a>
+      <button class="btn btn-glass js-open-catalog" type="button">Browse Radio Catalog</button>
+      <a class="btn btn-primary js-download-apk" href="https://github.com/darshan8890/lyra/releases/download/v1.6.47/LYRA-v1.6.47.apk" download="LYRA-v1.6.47.apk">Download LYRA v1.6.47 APK</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Page Hero -->
+    <section class="about-hero container">
+      <a class="about-back hero-enter" style="--d: 0ms" href="index.html">← Back to LYRA Home</a>
+      <span class="eyebrow hero-enter" style="--d: 60ms">About LYRA</span>
+      <h1 class="hero-enter" style="--d: 120ms">
+        Built for listeners who still<br />
+        <span class="hero-accent">own their music.</span>
+      </h1>
+      <p class="hero-lead hero-enter" style="--d: 180ms">
+        Modern streaming apps buried personal MP3 &amp; FLAC libraries behind ads, paywalls, and noisy algorithms.
+        LYRA brings back complete local ownership on Android — elevated with live worldwide LYRA Radio, private on-device AI curation, and studio-grade audio shaping.
+      </p>
+
+      <div class="trust-strip hero-enter" style="--d: 240ms">
+        <div class="trust-item">
+          <span class="trust-label">Package</span>
+          <strong>com.aura.music</strong>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <span class="trust-label">Platform</span>
+          <strong>Android 8.0 – 15</strong>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <span class="trust-label">Audio Engine</span>
+          <strong>Media3 ExoPlayer</strong>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <span class="trust-label">Pricing &amp; Ads</span>
+          <strong>100% Free · Zero Ads</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story & Pillars -->
+    <section class="section container">
+      <div class="about-shell reveal">
+        <div class="about-story">
+          <span class="eyebrow">Why LYRA Exists</span>
+          <h2>Calm obsidian design meets local intelligence.</h2>
+          <p>
+            LYRA started with a simple goal: an offline music player shouldn’t feel stuck in 2012. Every screen in LYRA — from dynamic artwork-tinted player backdrops and live waveform Home Screen widgets to shareable lyric cards — is crafted to feel calm, tactile, and deliberate.
+          </p>
+          <p>
+            When you want something new, LYRA Radio lets you stream curated tracks with artist portraits and save favorites offline for commutes or flights. When you’re offline, your entire library, playlists, Music Copilot, Music Lab Equalizer, and lyric translations keep working without touching the cloud.
+          </p>
+          <blockquote class="about-quote">“Your music. Your device. Your intelligence.”</blockquote>
+        </div>
+
+        <div class="about-pillars">
+          <article class="pillar-card">
+            <span class="pillar-tag">01 · Privacy</span>
+            <h3>On-Device Intelligence</h3>
+            <p>Music Copilot intent matching, local song indexing, and ML Kit lyric translations run directly on your Android device.</p>
+          </article>
+
+          <article class="pillar-card">
+            <span class="pillar-tag">02 · Pure Audio</span>
+            <h3>Media3 ExoPlayer Core</h3>
+            <p>Plays MP3, FLAC, WAV, M4A/AAC, OGG, and Opus smoothly with gapless playback, stereo balance, and loudness matching.</p>
+          </article>
+
+          <article class="pillar-card">
+            <span class="pillar-tag">03 · Zero Noise</span>
+            <h3>Free &amp; Ad-Free</h3>
+            <p>No banner ads, no video interruptions, no paywalls, and no third-party ad trackers — just music.</p>
+          </article>
+
+          <article class="pillar-card">
+            <span class="pillar-tag">04 · Craft</span>
+            <h3>Obsidian &amp; Rose Gold</h3>
+            <p>Crafted independently with synced video canvas, Music DNA listening stats, customizable playlists, and home widgets.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Under the Hood -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Under the Hood</span>
+        <h2>Designed with transparency from the first byte.</h2>
+        <p>Everything LYRA promises on the surface is backed by clean Android engineering underneath.</p>
+      </div>
+
+      <div class="about-tech-grid">
+        <article class="bento-card reveal">
+          <div class="bento-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Verified Direct Builds</h3>
+          <p>
+            Every APK release is signed directly from the LYRA Android project and published with its exact SHA-256 checksum so you can verify what you install.
+          </p>
+        </article>
+
+        <article class="bento-card reveal">
+          <div class="bento-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+          </div>
+          <h3>Hybrid Library &amp; Radio</h3>
+          <p>
+            Local tracks and LYRA Radio share one unified queue, one 5-band Equalizer, and automatic loudness matching so volume never jumps between sources.
+          </p>
+        </article>
+
+        <article class="bento-card reveal">
+          <div class="bento-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M9 9h6"/><path d="M9 13h4"/></svg>
+          </div>
+          <h3>Lyrics Without API Keys</h3>
+          <p>
+            Synced <code>.lrc</code> and LRCLIB lyrics pair with on-device ML Kit translation and transliteration — working seamlessly without cloud setup.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section container">
+      <div class="about-cta-card reveal">
+        <div>
+          <span class="eyebrow">Ready to Listen?</span>
+          <h2>Experience LYRA v1.6.47 on your Android phone.</h2>
+          <p>Download the direct APK, test the live web player, or browse all streaming tracks in the Radio Catalog.</p>
+        </div>
+        <div class="about-cta-actions">
+          <a class="btn btn-primary btn-lg btn-shimmer js-download-apk" href="https://github.com/darshan8890/lyra/releases/download/v1.6.47/LYRA-v1.6.47.apk" download="LYRA-v1.6.47.apk">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            <span>Download LYRA APK</span>
+            <span class="btn-tag">v1.6.47</span>
+          </a>
+          <a class="btn btn-glass btn-lg" href="index.html#preview">Try Live Web Preview</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/lyra-logo.png?v=2" alt="LYRA logo" width="32" height="32" />
+        <div>
+          <strong>LYRA</strong>
+          <p>Your music. Your device. Your intelligence.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#download">Download v1.6.47</a>
+        <a href="index.html#install">Install Guide</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="about.html" aria-current="page">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Searchable Live Radio Catalog Drawer -->
+  <div class="drawer-backdrop" id="catalogBackdrop" hidden></div>
+  <aside class="catalog-drawer" id="catalogDrawer" hidden role="dialog" aria-modal="true" aria-labelledby="catalogDrawerTitle">
+    <div class="catalog-head">
+      <div>
+        <span class="eyebrow">Live Streaming</span>
+        <h3 id="catalogDrawerTitle">LYRA Radio Catalog</h3>
+      </div>
+      <div class="catalog-head-right">
+        <span class="version-badge" id="catalogCountBadge">0 Tracks</span>
+        <button class="modal-close catalog-close" id="closeCatalogBtn" type="button" aria-label="Close catalog drawer">✕</button>
+      </div>
+    </div>
+
+    <div class="catalog-search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="catalogSearchInput" type="search" placeholder="Search song, artist, album, or genre…" autocomplete="off" />
+      <button class="catalog-clear" id="catalogClearBtn" type="button" hidden aria-label="Clear search">✕</button>
+    </div>
+
+    <div class="catalog-chips" id="catalogGenreChips"></div>
+
+    <div class="catalog-list-wrap">
+      <ul class="catalog-list" id="catalogList"></ul>
+      <p class="catalog-empty" id="catalogEmpty" hidden>No matching tracks found. Try another keyword or genre.</p>
+    </div>
+  </aside>
+
+  <!-- Post-Download Smart Helper -->
+  <div class="post-download-bar" id="postDownloadBar" hidden role="region" aria-label="Install next steps">
+    <div class="pdb-head">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <strong>Downloading LYRA-v1.6.47.apk…</strong>
+      <button class="pdb-close" id="closePostDownloadBtn" type="button" aria-label="Dismiss install helper">✕</button>
+    </div>
+    <p>When finished, tap the APK file and choose <b>Allow from this source</b> if Android prompts.</p>
+    <a class="btn btn-sm btn-primary" href="index.html#install">See 3-Step Guide →</a>
+  </div>
+
+  <!-- Friendly Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="app.js?v=6"></script>
+</body>
+</html>
