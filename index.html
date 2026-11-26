@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
   <div class="ambient-stage" aria-hidden="true">
@@ -141,6 +141,13 @@
             <span class="trust-label">Checksum</span>
             <button class="link-mono js-copy-sha" type="button" title="Copy SHA-256 checksum">Copy SHA-256</button>
           </div>
+        </div>
+
+        <div class="kbd-strip hero-enter" style="--d: 380ms" aria-label="Keyboard shortcuts">
+          <span class="kbd-item"><kbd>Space</kbd> Play / Pause</span>
+          <span class="kbd-item"><kbd>←</kbd><kbd>→</kbd> Skip</span>
+          <span class="kbd-item"><kbd>/</kbd> Radio Catalog</span>
+          <span class="kbd-item"><kbd>M</kbd> Mute</span>
         </div>
       </div>
 
@@ -671,20 +678,29 @@
         <p>Installing directly from a website is fast and safe — here is exactly what your Android phone will ask.</p>
       </div>
 
+      <div class="install-smart-banner" id="installSmartBanner" hidden role="status">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <div class="isb-copy">
+          <strong>Download started — follow these 3 quick steps</strong>
+          <span id="installSmartText">Step 1 of 3: Saving LYRA-v1.6.47.apk (88.0 MB) to your device.</span>
+        </div>
+        <button class="btn btn-sm btn-outline" id="installNextStepBtn" type="button">Next Step →</button>
+      </div>
+
       <div class="steps-grid">
-        <article class="step-card reveal">
+        <article class="step-card reveal" data-step="1">
           <span class="step-num">01</span>
           <h3>Download the APK</h3>
           <p>Tap <strong>Download LYRA APK</strong> on your Android phone (or scan the QR code above). Your browser will save <code>LYRA-v1.6.47.apk</code>.</p>
         </article>
 
-        <article class="step-card reveal">
+        <article class="step-card reveal" data-step="2">
           <span class="step-num">02</span>
           <h3>Allow Browser Install</h3>
           <p>Tap the downloaded file. If Android asks to allow unknown apps from your browser, choose <strong>Settings → Allow from this source</strong> and go back.</p>
         </article>
 
-        <article class="step-card reveal">
+        <article class="step-card reveal" data-step="3">
           <span class="step-num">03</span>
           <h3>Open &amp; Grant Audio Access</h3>
           <p>Tap <strong>Install</strong>, open LYRA, sign in with Google, Microsoft, or a LYRA username, and allow audio permission to scan your local songs.</p>
@@ -870,10 +886,21 @@
     </div>
   </aside>
 
+  <!-- Post-Download Smart Helper -->
+  <div class="post-download-bar" id="postDownloadBar" hidden role="region" aria-label="Install next steps">
+    <div class="pdb-head">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <strong>Downloading LYRA-v1.6.47.apk…</strong>
+      <button class="pdb-close" id="closePostDownloadBtn" type="button" aria-label="Dismiss install helper">✕</button>
+    </div>
+    <p>When finished, tap the APK file and choose <b>Allow from this source</b> if Android prompts.</p>
+    <button class="btn btn-sm btn-primary" id="jumpToInstallBtn" type="button">See 3-Step Guide ↓</button>
+  </div>
+
   <!-- Friendly Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <script src="qr.js"></script>
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
