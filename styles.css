@@ -201,9 +201,9 @@ code {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   color: var(--muted);
-  font-size: 0.91rem;
+  font-size: 0.89rem;
 }
 
 .nav-links a {
@@ -3016,6 +3016,88 @@ kbd {
   font-size: 0.94rem;
 }
 
+/* About */
+.about-shell {
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr;
+  gap: 32px;
+  padding: 36px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(150deg, rgba(26, 28, 36, 0.82), rgba(12, 13, 19, 0.95));
+  border: 1px solid var(--line-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-story h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  line-height: 1.15;
+}
+
+.about-story p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.about-quote {
+  margin: 10px 0 0;
+  padding: 12px 16px;
+  border-left: 2px solid var(--gold-bright);
+  background: rgba(201, 149, 108, 0.08);
+  border-radius: 0 12px 12px 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.32rem;
+  color: var(--gold-bright);
+}
+
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.pillar-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: rgba(16, 18, 24, 0.82);
+  border: 1px solid var(--line);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.pillar-card:hover {
+  border-color: var(--line-gold);
+  transform: translateY(-3px);
+}
+
+.pillar-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.pillar-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.04rem;
+}
+
+.pillar-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--line);
@@ -3207,7 +3289,8 @@ kbd {
     grid-column: span 2;
   }
 
-  .download-hub {
+  .download-hub,
+  .about-shell {
     grid-template-columns: 1fr;
   }
 
@@ -3235,11 +3318,13 @@ kbd {
     display: none;
   }
 
-  .spec-grid {
+  .spec-grid,
+  .about-pillars {
     grid-template-columns: 1fr;
   }
 
-  .download-hub {
+  .download-hub,
+  .about-shell {
     padding: 24px 20px;
   }
 }
