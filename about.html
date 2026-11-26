@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=16" />
 </head>
 <body>
   <div class="ambient-stage" aria-hidden="true">
@@ -81,35 +81,72 @@
     <!-- About & Trust Hero -->
     <section class="about-hero container">
       <a class="about-back hero-enter" style="--d: 0ms" href="index.html">← Back to LYRA Home</a>
-      <span class="eyebrow hero-enter" style="--d: 60ms">About &amp; Security Transparency</span>
-      <h1 class="hero-enter" style="--d: 120ms">
-        Built to be verified,<br />
-        <span class="hero-accent">not blindly trusted.</span>
-      </h1>
-      <p class="hero-lead hero-enter" style="--d: 180ms">
-        Installing an APK from the web should never feel like guesswork. Here is everything inside LYRA — our exact Android permissions, verified SHA-256 build fingerprint, on-device privacy promise, and why we ship directly without ads or trackers.
-      </p>
 
-      <div class="trust-strip hero-enter" style="--d: 240ms">
-        <div class="trust-item">
-          <span class="trust-label">Official Package</span>
-          <strong>com.aura.music</strong>
+      <div class="about-hero-grid">
+        <div class="about-hero-main">
+          <span class="eyebrow hero-enter" style="--d: 60ms">About &amp; Security Transparency</span>
+          <h1 class="hero-enter" style="--d: 120ms">
+            Built to be verified,<br />
+            <span class="hero-accent">not blindly trusted.</span>
+          </h1>
+          <p class="hero-lead hero-enter" style="--d: 180ms">
+            Installing an APK from the web should never feel like guesswork. Here is everything inside LYRA — our exact Android permissions, verified SHA-256 build fingerprint, on-device privacy promise, and why we ship directly without ads or trackers.
+          </p>
+
+          <div class="trust-strip hero-enter" style="--d: 240ms">
+            <div class="trust-item">
+              <span class="trust-label">Official Package</span>
+              <strong>com.aura.music</strong>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <span class="trust-label">Trackers &amp; Ads</span>
+              <strong>Zero · Clean Build</strong>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <span class="trust-label">Sensitive Data</span>
+              <strong>No Camera · Mic · GPS</strong>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <span class="trust-label">Verification</span>
+              <button class="link-mono js-copy-sha" type="button">Copy SHA-256</button>
+            </div>
+          </div>
         </div>
-        <div class="trust-divider" aria-hidden="true"></div>
-        <div class="trust-item">
-          <span class="trust-label">Trackers &amp; Ads</span>
-          <strong>Zero · Clean Build</strong>
-        </div>
-        <div class="trust-divider" aria-hidden="true"></div>
-        <div class="trust-item">
-          <span class="trust-label">Sensitive Data</span>
-          <strong>No Camera · Mic · GPS</strong>
-        </div>
-        <div class="trust-divider" aria-hidden="true"></div>
-        <div class="trust-item">
-          <span class="trust-label">Verification</span>
-          <button class="link-mono js-copy-sha" type="button">Copy SHA-256</button>
-        </div>
+
+        <aside class="founder-card hero-enter" style="--d: 200ms" aria-label="LYRA Creator & Owner">
+          <div class="founder-top">
+            <img src="assets/lyra-logo.png?v=2" alt="LYRA emblem" width="46" height="46" />
+            <span class="founder-role-badge">Owner &amp; CEO</span>
+          </div>
+
+          <div class="founder-identity">
+            <span class="founder-kicker">Created &amp; Maintained By</span>
+            <h2>Darshan</h2>
+            <p class="founder-title">Founder, Owner &amp; Lead Architect · LYRA</p>
+          </div>
+
+          <p class="founder-pledge">
+            “I built LYRA so listeners can enjoy their own offline music library and worldwide radio in one refined app — without ads, tracking, or hidden compromises.”
+          </p>
+
+          <div class="founder-meta">
+            <div>
+              <span>Publisher</span>
+              <strong>Darshan · Independent</strong>
+            </div>
+            <div>
+              <span>GitHub</span>
+              <a href="https://github.com/darshan8890" target="_blank" rel="noopener noreferrer">@darshan8890 ↗</a>
+            </div>
+            <div>
+              <span>Signed Release</span>
+              <strong>v1.6.47 (Build 60)</strong>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
