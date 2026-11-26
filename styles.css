@@ -212,8 +212,9 @@ code {
 }
 
 .nav-links a:hover,
-.nav-links a:focus-visible {
-  color: var(--text);
+.nav-links a:focus-visible,
+.nav-links a.is-active {
+  color: var(--gold-bright);
 }
 
 .nav-actions {
@@ -3098,6 +3099,98 @@ kbd {
   font-size: 0.88rem;
 }
 
+.about-teaser {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px 34px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, rgba(26, 28, 36, 0.82), rgba(12, 13, 19, 0.94));
+  border: 1px solid var(--line-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-teaser-copy {
+  max-width: 660px;
+}
+
+.about-teaser-copy h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.55rem, 2.7vw, 2.15rem);
+  line-height: 1.16;
+}
+
+.about-teaser-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.about-hero {
+  padding: 52px 0 28px;
+}
+
+.about-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 0.88rem;
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.about-back:hover {
+  color: var(--gold-bright);
+  transform: translateX(-3px);
+}
+
+.about-hero h1 {
+  margin: 6px 0 18px;
+  font-size: clamp(2.3rem, 4.6vw, 3.8rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+.about-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.about-cta-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 34px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, rgba(201, 149, 108, 0.14), rgba(16, 18, 24, 0.95));
+  border: 1px solid var(--line-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-cta-card h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.55rem, 2.6vw, 2.1rem);
+  line-height: 1.16;
+}
+
+.about-cta-card p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+.about-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--line);
@@ -3281,7 +3374,8 @@ kbd {
   }
 
   .bento-grid,
-  .steps-grid {
+  .steps-grid,
+  .about-tech-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -3306,7 +3400,8 @@ kbd {
 
   .bento-grid,
   .steps-grid,
-  .release-item {
+  .release-item,
+  .about-tech-grid {
     grid-template-columns: 1fr;
   }
 
