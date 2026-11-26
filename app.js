@@ -354,7 +354,7 @@
     if (typeof syncCatalogPlayingState === "function") syncCatalogPlayingState();
     updateProgressUI();
     setLyricShift(0);
-    fetchLyricsForTrack(t);
+    if (lyricsBox) fetchLyricsForTrack(t);
 
     if (autoPlay) {
       playCurrent();
@@ -2026,7 +2026,12 @@
         activateTab("player");
         loadTrack(idx, true);
         setCatalogOpen(false);
-        document.getElementById("preview")?.scrollIntoView({ behavior: "smooth", block: "center" });
+        const previewEl = document.getElementById("preview");
+        if (previewEl) {
+          previewEl.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
+          showToast(`Playing: ${tracks[idx]?.title || "LYRA Radio"}`);
+        }
       });
     });
   }
